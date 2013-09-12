@@ -10,21 +10,22 @@ You can also give to the wrapper a custom class (I use it to align the iframe be
 Silverstripe instructions
 -------------
 To activate the plugin, place it wherever you want, then edit your **_config.php** adding the code
-
+```php
     // Add Paste Snippet Plugin
     HtmlEditorConfig::get('cms')->enablePlugins('noneditable');
     HtmlEditorConfig::get('cms')->enablePlugins(array('pastesnippet' => '../../../pastesnippet/editor_plugin.js'));
     HtmlEditorConfig::get('cms')->insertButtonsAfter('anchor', 'pastesnippet');
-
-where *../../../pastesnippet/editor_plugin.js* is the URL placed in the site root
+```
+where `../../../pastesnippet/editor_plugin.js` is the URL placed in the site root
 
 
 Remember the bugz
 -------------
 See the page http://www.silverstripe.org/general-questions/show/16438 to learn how to fix iframe usage on Silverstripe.
 Then add to **Page.php** the following lines of code
-
+```php
     public function onBeforeWrite() { 
         $this->Content = preg_replace('|<iframe(.*)/>|Uims', '<iframe\\1> </iframe>', $this->Content); 
         parent::onBeforeWrite(); 
     }
+```

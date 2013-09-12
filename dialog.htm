@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{#pastesnippet_dlg.title_short}</title>
+	<script type="text/javascript" src="../sapphire/thirdparty/tinymce/tiny_mce_popup.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+</head>
+<body>
+
+<body>
+
+	<form name="source" onsubmit="return PasteSnippetDialog.insert();" action="#">
+
+		<p><label for="code_snippet">{#pastesnippet_dlg.title} </label></p>
+	    <p><textarea id="code_snippet" name="code_snippet" class="text" style="width:100%" rows="5" /></textarea></p>
+	   
+	    <p>{#pastesnippet_dlg.custom_class_desc}
+	    	<select id="custom_class" name="custom_class">
+	    		<option value="left">Left</option>
+	    		<option value="center">Center</option>
+	    		<option value="right">Right</option>
+	    		<option value="leftAlone">Left Alone</option>
+	    		<option value="rightAlone">Right Alone</option>
+	    	</select>
+	    </p>
+
+		<div class="mceActionPanel">
+			<div style="float: left">
+				<input type="button" id="insert" name="insert" value="{#insert}" onclick="PasteSnippetDialog.insert();" />
+			</div>
+
+			<div style="float: right">
+				<input type="button" id="cancel" name="cancel" value="{#cancel}" onclick="tinyMCEPopup.close();" />
+			</div>
+		</div>
+	</form>
+
+</body>
+</html>

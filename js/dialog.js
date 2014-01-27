@@ -25,7 +25,7 @@ var PasteSnippetDialog = {
 
 		// Create a wrapper to the object and give it the custom class
 		var wrapper = document.createElement('div');
-		wrapper.setAttribute('class', 'wrapper ' + custom_class);
+		wrapper.setAttribute('class', 'pastesnippet-wrapper ' + custom_class);
 		
 		// If the snippet (e.g. iframe) has a size, give to the wrapper the same size
 		if (code.indexOf("width") != -1) {
